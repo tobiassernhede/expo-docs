@@ -173,7 +173,7 @@ Create a `DownloadResumable` object which can start, pause, and resume a downloa
 
 -   **url (_string_)** -- The remote URI to download from.
 
--   **fileUri (_string_)** -- The local URI of the file to download to. If there is no file at this URI, a new one is created. If there is a file at this URI, its contents are replaced.
+-   **fileUri (_string_)** -- The local URI of the file to download to. If there is no file at this URI, a new one is created. If there is a file at this URI, you will need to manually delete the file first.
 
 -   **options (_object_)** -- A map of options:
 
@@ -182,7 +182,7 @@ Create a `DownloadResumable` object which can start, pause, and resume a downloa
 -   **callback (_function_)** --
     This function is called on each data write to update the download progress.  An object with the following fields are passed:
     - **totalBytesWritten (_number_)** -- The total bytes written by the download operation.
-    - **totalBytesExpectedToWrite (_number)** -- The total bytes expected to be written by the download operation.
+    - **totalBytesExpectedToWrite (_number_)** -- The total bytes expected to be written by the download operation.
 
 -   **resumeData (_string_)** -- The string which allows the api to resume a paused download.  This is set on the `DownloadResumable` object automatically when a download is paused.  When initializing a new `DownloadResumable` this should be `null`.
 
@@ -283,6 +283,24 @@ downloadResumable.pauseAsync()
     console.error(error);
   });
 
+downloadResumable.resumeAsync()
+  .then(({ uri }) => {
+    console.log('Finished downloading to ', uri);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+//To resume a download across app restarts, assuming the the DownloadResumable.savable() object was stored:
+const downloadSnapshotJson = await AsyncStorage.getItem('pausedDownload');
+const downloadSnapshot = JSON.parse(downloadJson);
+const downloadResumable = new FileSystem.DownloadResumable(
+  downloadSnapshot.url,
+  downloadSnapshot.fileUri,
+  downloadSnapshot.options, 
+  callback,
+  downloadSnapshot.resumeData
+);
 downloadResumable.resumeAsync()
   .then(({ uri }) => {
     console.log('Finished downloading to ', uri);

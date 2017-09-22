@@ -28,25 +28,23 @@ import 'typeface-source-sans-pro';
 import 'typeface-source-code-pro';
 
 import unversioned from '../data/unversioned.yaml';
+import v21 from '../data/v21.yaml';
 import v20 from '../data/v20.yaml';
 import v19 from '../data/v19.yaml';
 import v18 from '../data/v18.yaml';
 import v17 from '../data/v17.yaml';
 import v16 from '../data/v16.yaml';
 import v15 from '../data/v15.yaml';
-import v14 from '../data/v14.yaml';
-import v13 from '../data/v13.yaml';
 
 const versions = [
   `latest`,
+  `v21.0.0`,
   `v20.0.0`,
   `v19.0.0`,
   `v18.0.0`,
   `v17.0.0`,
   `v16.0.0`,
   `v15.0.0`,
-  `v14.0.0`,
-  `v13.0.0`,
 ];
 
 if (typeof window === 'object' && window.GATSBY_ENV === 'development') {
@@ -92,6 +90,9 @@ class Wrapper extends React.Component {
       case 'unversioned':
         routes = unversioned;
         break;
+      case 'v21.0.0':
+        routes = v21;
+        break;
       case 'v20.0.0':
         routes = v20;
         break;
@@ -110,14 +111,8 @@ class Wrapper extends React.Component {
       case 'v15.0.0':
         routes = v15;
         break;
-      case 'v14.0.0':
-        routes = v14;
-        break;
-      case 'v13.0.0':
-        routes = v13;
-        break;
       default:
-        routes = v20;
+        routes = v21;
     }
 
     if (version === 'latest') {
@@ -280,7 +275,6 @@ class Wrapper extends React.Component {
               display: `none`,
             },
           }}>
-
           <Link to={`/versions/${this.state.activeVersion}/index.html`}>
             <img
               src={logoText}
@@ -297,7 +291,6 @@ class Wrapper extends React.Component {
             onClick={() => this.setState({ sidebarOpen: true })}
             value="Menu"
           />
-
         </nav>
       </div>
     );

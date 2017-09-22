@@ -6,11 +6,11 @@ A React component that renders a preview for the device's either front or back c
 
 Requires `Permissions.CAMERA`.
 
-### Example
+### Basic Example
 
 ```javascript
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import { Camera, Permissions } from 'expo';
 
 export default class CameraExample extends React.Component {
@@ -67,6 +67,10 @@ export default class CameraExample extends React.Component {
 }
 ```
 
+### Comprehensive Example
+
+Check out a full example at [expo/camerja](https://github.com/expo/camerja). You can try it with Expo at [@community/camerja](https://expo.io/@community/camerja).
+
 ### props
 
 - **type**
@@ -95,7 +99,7 @@ Distance to plane of sharpest focus. A value between 0 and 1: 0 - infinity focus
 
 - **ratio** (_string_)
 
-Android only. A string representing aspect ratio of the preview, eg. `4:3`, `16:9`, `1:1`. To check if a ratio is supported by the device use `getSupportedRatios`. Default: `4:3`.
+Android only. A string representing aspect ratio of the preview, eg. `4:3`, `16:9`, `1:1`. To check if a ratio is supported by the device use `getSupportedRatiosAsync`. Default: `4:3`.
 
 - **onCameraReady** (_function_)
 

@@ -9,6 +9,7 @@
     Additional Resources: /versions/unversioned/introduction/additional-resources.html
     Troubleshooting Proxies: /versions/unversioned/introduction/troubleshooting-proxies.html
     Frequently Asked Questions: /versions/unversioned/introduction/faq.html
+    Why not Expo?: /versions/unversioned/introduction/why-not-expo.html
 - title: Working with Expo
   index: /versions/unversioned/workflow/index.html
   links:
@@ -53,18 +54,22 @@
   links:
     Introduction: /versions/unversioned/sdk/index.html
     Accelerometer: /versions/unversioned/sdk/accelerometer.html
+    AdMob: /versions/unversioned/sdk/admob.html
     Amplitude: /versions/unversioned/sdk/amplitude.html
     AppLoading: /versions/unversioned/sdk/app-loading.html
     Art: /versions/unversioned/sdk/art.html
     Asset: /versions/unversioned/sdk/asset.html
     Audio: /versions/unversioned/sdk/audio.html
+    AuthSession: /versions/unversioned/sdk/auth-session.html
     AV: /versions/unversioned/sdk/av.html
     BarCodeScanner: /versions/unversioned/sdk/bar-code-scanner.html
     BlurView: /versions/unversioned/sdk/blur-view.html
     Branch: /versions/unversioned/sdk/branch.html
+    Brightness: /versions/unversioned/sdk/brightness.html
     Camera: /versions/unversioned/sdk/camera.html
     Constants: /versions/unversioned/sdk/constants.html
     Contacts: /versions/unversioned/sdk/contacts.html
+    DeviceMotion: /versions/unversioned/sdk/devicemotion.html
     DocumentPicker: /versions/unversioned/sdk/document-picker.html
     ErrorRecovery: /versions/unversioned/sdk/error-recovery.html
     Facebook: /versions/unversioned/sdk/facebook.html
@@ -72,6 +77,7 @@
     FileSystem: /versions/unversioned/sdk/filesystem.html
     Fingerprint: /versions/unversioned/sdk/fingerprint.html
     Font: /versions/unversioned/sdk/font.html
+    GestureHandler: /versions/unversioned/sdk/gesture-handler.html
     GLView: /versions/unversioned/sdk/gl-view.html
     Google: /versions/unversioned/sdk/google.html
     Gyroscope: /versions/unversioned/sdk/gyroscope.html
